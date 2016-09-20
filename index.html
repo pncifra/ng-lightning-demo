@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do: List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    
+    <script src="systemjs.config.js"></script>
+    <script src="node_modules/ng-lightning/ng-lightning.bundle.js"></script>
+       <!--<script src="https://unpkg.com/ng-lightning@0.22.0/ng-lightning.bundle.js"></script>-->
+
+    <script>
+      //     System.import('system-config.js').then(function () {
+      //   System.import('main');
+      // }).catch(console.error.bind(console));
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+    <base href="/">
+  </head>
+
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
+</html>

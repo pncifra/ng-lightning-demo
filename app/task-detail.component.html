@@ -1,0 +1,27 @@
+<div *ngIf="task">
+  <h2>{{task.name}}</h2>
+  <div>
+    <label>id: </label>{{task.id}}
+  </div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="task.name" placeholder="name" />
+  </div>
+  <div>
+    <label>completed: </label>
+    <input [(ngModel)]="task.completed" placeholder="name" />
+  </div>
+  <div>
+    <label>priority: </label>
+    <input [(ngModel)]="task.priority" placeholder="name" />
+  </div>
+  <div>
+    <label>duration: </label>
+    <input [(ngModel)]="task.duration" placeholder="name" />
+  </div>
+  <div>
+    <label>value: </label>
+    <input [(ngModel)]="task.value" placeholder="name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

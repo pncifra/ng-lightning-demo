@@ -1,0 +1,52 @@
+h1 {
+  font-size: 1.2em;
+  color: #999;
+  margin-bottom: 0;
+}
+h2 {
+  font-size: 2em;
+  margin-top: 0;
+  padding-top: 0;
+}
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.router-link-active {
+  color: #039be5;
+}
+
+.site-masthead {
+    padding: 1rem 2rem;
+    background-color: #16325c;
+    color: #fff;
+}
+
+@media (min-width: 64em) {
+  .site-masthead {
+    height: 11.25rem;
+    color: white;
+  }
+  .site-masthead h1 {
+    font-size: 3rem;
+    color: white;
+  }
+}
+
+.site-masthead h1 {
+    font-weight: 300;
+    font-family: "Salesforce Sans";
+    line-height: 1.25;
+    color: white;
+}

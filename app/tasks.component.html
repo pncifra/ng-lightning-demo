@@ -1,0 +1,61 @@
+<div>
+<button type="button" nglButton="neutral" (click)="markComplete()">Mark Complete</button>
+<button type="button" nglButton="neutral" (click)="open()">New Task</button>
+  <div style="padding: 1em" >
+   <div style="padding: .5em" class="slds-form-element" *ngFor="let task of tasks">
+    <div class="slds-form-element__control">
+        <label class="slds-checkbox">
+          <input (click)="onSelect(task)" type="checkbox" name="options" id="checkbox-01" />
+          <span class="slds-checkbox--faux"> </span>
+            <ngl-badge [type]="getType(task)">
+               {{task.points}}
+            </ngl-badge>
+            <span>&nbsp;&nbsp;</span>
+          <span class="slds-form-element__label">
+             {{task.name}}
+          </span>
+        </label>
+    </div>
+   </div>
+  </div>
+</div>
+<ngl-modal header="New Task" [(open)]="opened" [size]="size">
+  <div body>
+  <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+      <div class="form-group slds-form-element">
+        <label class="slds-form-element__label"  for="name">Name</label>
+        <!--<input type="text" class="form-control slds-input"
+          [(ngModel)]="newTask.name"
+            ngControl="name"  #name="ngForm" >-->
+      </div>
+      <div class="form-group slds-form-element">
+        <label class="slds-form-element__label" for="priority">Priority</label>
+       <div class="slds-select_container">
+          <!--<select class="form-control slds-select" required
+            [(ngModel)]="newTask.priority"
+              ngControl="priority" #priority="ngForm" >-->
+              <!--<option value="0">Select</option>
+              <option value="1">1 - High</option>
+              <option value="2">2 - Medium</option>
+              <option value="3">3 - Low </option>
+          </select>-->
+        </div>
+      </div>
+      <div class="form-group slds-form-element">
+        <label class="slds-form-element__label" for="difficulty">Difficulty</label>
+        <div class="slds-select_container">
+          <!--<select class="form-control slds-select" required
+            [(ngModel)]="newTask.difficulty"
+              ngControl="difficulty" #difficulty="ngForm" >-->
+             <!--<option value="0">Select</option>
+              <option value="1">1 - Low</option>
+              <option value="2">2 - Medium</option>
+              <option value="3">3 - High </option>
+          </select>-->
+        </div>
+      </div>
+    </form>
+   </div>
+  <button class="slds-button slds-button--neutral" (click)="cancel()">Cancel</button>
+  <button class="slds-button slds-button--neutral slds-button--brand" (click)="onSubmit()">Save</button>
+</ngl-modal>
