@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { Task } from './task';
 import { TaskService } from './task.service';
-import {NglModule, provideNglConfig} from 'ng-lightning/ng-lightning';
 
 @Component({
   moduleId: module.id,

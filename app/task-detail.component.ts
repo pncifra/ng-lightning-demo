@@ -1,5 +1,4 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
-//import { RouteParams } from '@angular/router-deprecated';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { Task } from './task';

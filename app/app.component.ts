@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
-import {NglModule, provideNglConfig} from 'ng-lightning/ng-lightning';
+import {NglModule} from 'ng-lightning/ng-lightning';
 
 
 

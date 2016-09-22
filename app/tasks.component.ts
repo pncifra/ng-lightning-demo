@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-//import { FormsModule } from '@angular/forms';
-//import { NgForm } from '@angular/common';
-
 import { Task } from './task';
 import { TaskDetailComponent } from './task-detail.component';
 import { TaskService } from './task.service';
-//import { NGL_DIRECTIVES } from 'ng-lightning/ng-lightning';
 
 @Component({
   moduleId: module.id,
@@ -14,7 +10,6 @@ import { TaskService } from './task.service';
   templateUrl: 'tasks.component.html',
   styleUrls:  ['tasks.component.css'],
   providers: [TaskService, TaskDetailComponent]
-  //directives: [TaskDetailComponent]
 })
 export class TasksComponent implements OnInit {
   tasks: Task[];
