@@ -1,13 +1,5 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
-//import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
-//import { Router } from '@angular/router-deprecated';
-//
-//import { DashboardComponent } from './dashboard.component';
-//import { SettingsComponent } from './settings.component';
-//import { TasksComponent } from './tasks.component';
-//import { TaskDetailComponent } from './task-detail.component';
-//import { TaskService } from './task.service';
 import {NglModule, provideNglConfig} from 'ng-lightning/ng-lightning';
 
 
@@ -19,36 +11,43 @@ import {NglModule, provideNglConfig} from 'ng-lightning/ng-lightning';
   <div class="site-masthead">
     <h1>
       <svg aria-hidden="true" class="slds-icon--large slds-icon-text-default">
-       </svg>
-       Task Tracker
-   </h1>
+        <use xlink:href="assets/icons/utility-sprite/svg/symbols.svg#paste"></use>
+      </svg>
+      Task Tracker
+    </h1>
   </div>
   <div>
     <div>
       <ngl-tabs [(selected)]="selectedTab" [type]="type">
-        <ngl-tab nglTabId="Tasks">
+        <ngl-tab nglTabId="Tasks" (onActivate)="tabChange('/tasks', 'active')">
           <template ngl-tab-heading>
              <svg aria-hidden="true" class="slds-icon--x-small slds-icon-text-default">
+              <use xlink:href="assets/icons/utility-sprite/svg/symbols.svg#check"></use>
              </svg>
-             <a routerLink="/tasks" routerLinkActive="active">Tasks</a></template>
+             Tasks
+          </template>
           <template ngl-tab-content>
             <router-outlet></router-outlet>
           </template>
         </ngl-tab>
-        <ngl-tab nglTabId="Dashboard">
+        <ngl-tab nglTabId="Dashboard" (onActivate)="tabChange('/dashboard', 'active')">
           <template ngl-tab-heading>
             <svg aria-hidden="true" class="slds-icon--x-small slds-icon-text-default">
-             </svg>
-             <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></template>
+              <use xlink:href="assets/icons/utility-sprite/svg/symbols.svg#metrics"></use>
+            </svg>
+            Dashboard
+          </template>
           <template ngl-tab-content>
             <router-outlet></router-outlet>
           </template>
         </ngl-tab>
-        <ngl-tab nglTabId="Settings">
-          <template ngl-tab-heading>
+        <ngl-tab nglTabId="Settings" (onActivate)="tabChange('/settings', 'active')">
+          <template ngl-tab-heading >
             <svg aria-hidden="true" class="slds-icon--x-small slds-icon-text-default">
-             </svg>
-             <a routerLink="/settings" routerLinkActive="active" >Settings</a></template>
+              <use xlink:href="assets/icons/utility-sprite/svg/symbols.svg#custom_apps"></use>
+            </svg>
+            Settings
+          </template>
           <template ngl-tab-content>
             <router-outlet></router-outlet>
           </template>
@@ -67,15 +66,10 @@ export class AppComponent {
   selectedTab: any = 'Tasks';
 
   constructor(
-    private  _router: Router,
-    private route: ActivatedRoute ) {
+    private  _router: Router) {
   }
 
-//TODO: use the new router and look into RouterSegement component
-  ngOnInit() {
-    console.log('selected tab is ' + this._router.url);
-    //this.selectedTab = this._router.url;
+  protected tabChange(link: string, event: string) {
+    this._router.navigate([link]);
   }
 }
-
-

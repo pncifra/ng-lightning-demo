@@ -9,7 +9,7 @@ import { SettingsComponent } from './settings.component';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/tasks',
     pathMatch: 'full'
   }, {
     path: 'dashboard',
