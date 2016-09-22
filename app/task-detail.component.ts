@@ -28,15 +28,9 @@ export class TaskDetailComponent implements OnInit {
         let id = +params['id'];
         this.navigated = true;
         this._taskService.getTask(id)
-            .then(task => this.task = task);
-      // } else {
-      //   this.navigated = false;
-      //   this.task = new Task();
+          .then(task => this.task = task);
       }
     });
-    // let id = +this._routeParams.get('id');
-    // this._taskService.getTask(id)
-    //   .then(task => this.task = task);
   }
 
   goBack() {

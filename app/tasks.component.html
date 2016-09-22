@@ -21,41 +21,40 @@
 </div>
 <ngl-modal header="New Task" [(open)]="opened" [size]="size">
   <div body>
-  <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+  <form (ngSubmit)="onSubmit()" name="taskForm" #taskForm="ngForm">
       <div class="form-group slds-form-element">
         <label class="slds-form-element__label"  for="name">Name</label>
-        <!--<input type="text" class="form-control slds-input"
-          [(ngModel)]="newTask.name"
-            ngControl="name"  #name="ngForm" >-->
+        <input ngModel type="text" class="form-control slds-input"
+          [(ngModel)]="newTask.name" name="name">
       </div>
       <div class="form-group slds-form-element">
         <label class="slds-form-element__label" for="priority">Priority</label>
        <div class="slds-select_container">
-          <!--<select class="form-control slds-select" required
-            [(ngModel)]="newTask.priority"
-              ngControl="priority" #priority="ngForm" >-->
-              <!--<option value="0">Select</option>
+          <select ngModel class="form-control slds-select" required
+            [(ngModel)]="newTask.priority" name="priority" >
+              <option value="0">Select</option>
               <option value="1">1 - High</option>
               <option value="2">2 - Medium</option>
               <option value="3">3 - Low </option>
-          </select>-->
+          </select>
         </div>
       </div>
       <div class="form-group slds-form-element">
         <label class="slds-form-element__label" for="difficulty">Difficulty</label>
         <div class="slds-select_container">
-          <!--<select class="form-control slds-select" required
-            [(ngModel)]="newTask.difficulty"
-              ngControl="difficulty" #difficulty="ngForm" >-->
-             <!--<option value="0">Select</option>
+         <select ngModel class="form-control slds-select" required
+            [(ngModel)]="newTask.difficulty" name="difficulty">
+              <option value="0">Select</option>
               <option value="1">1 - Low</option>
               <option value="2">2 - Medium</option>
               <option value="3">3 - High </option>
-          </select>-->
+          </select>
         </div>
       </div>
     </form>
    </div>
+   <template ngl-modal-footer>
   <button class="slds-button slds-button--neutral" (click)="cancel()">Cancel</button>
   <button class="slds-button slds-button--neutral slds-button--brand" (click)="onSubmit()">Save</button>
+  </template>
 </ngl-modal>
